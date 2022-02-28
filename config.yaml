@@ -1,0 +1,33 @@
+## Sitewide settings ##
+baseURL: 
+relativeURLs: true
+languageCode: en-us
+title: Fayetteville Plumber
+
+## Parameters
+params:
+  description: Top Rated Plumber in Fayetteville, North Carolina
+  number: 9105555555
+  images: # Featured Image
+  - 
+
+## Hugo Settings
+buildFuture: false
+enableGitInfo: false
+enableRobotsTXT: true
+paginate: 9
+timezone: America/New_York
+
+## Menus
+menu:
+  social:
+  - identifier: 
+    name: 
+    pre: 
+    url: 
+    weight: 
+  
+  main:
+  - name: Home
+    url: /
+    weight: 1 

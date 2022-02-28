@@ -1,0 +1,45 @@
+{{ $hero := (resources.Get "images/hero.jpg").Resize "1400x webp q85" }}
+<div class="relative w-full md:rounded md:shadow md:w-2/3 md:mx-auto mt-4 p-4 overflow-clip">
+  <div class="absolute inset-0">
+    <img class="h-full w-full object-cover object-left-bottom" src="{{ $hero.RelPermalink }}">
+    <div class="absolute inset-0 bg-emerald-800 mix-blend-multiply "></div>
+  </div>
+	<div class="flex flex-col md:flex-row relative">
+		<div class="w-full md:w-1/2">
+			<h2 class="text-4xl text-emerald-50 mb-6">Welcome to {{ site.Params.business }}!</h2>
+			<p class="text-xl text-white">Whether you have new construction, or need help unclogging a drain, Joe's plumbing needs to be your first stop! With 30 years experience being a highly rated, quality plumber in the Fayetteville area, we have you covered!</p>
+      <p class="text-xl text-white mt-4">With 24/7 Emergency Service, we will come out day or night to help you with whatever plumbing needs you have!</p>
+      <p class="text-xl text-white mt-4">No matter what your project is, just fill out the form (or give us a call) and we'll give you a free quote.</p>
+	    <a href="tel:+{{ site.Params.number }}" type="button" class="relative block w-1/2 items-center px-4 py-2 border border-transparent text-lg font-medium rounded-md text-white mx-auto my-6 bg-emerald-600 shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500">
+        <span>Call Us Today - {{ replaceRE `(\d{3})(\d{3})(\d{4})` "($1) $2-$3" site.Params.number }}</span>
+      </a>
+		</div>
+		<div class="bg-white w-full md:w-1/2 p-4 rounded shadow my-4 md:mx-4">
+      <div class="max-w-lg mx-auto lg:max-w-none">
+        <form action="#" method="POST" class="grid grid-cols-1 gap-y-6">
+          <div>
+            <label for="full-name" class="sr-only">Full name</label>
+            <input type="text" name="full-name" id="full-name" autocomplete="name" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-emerald-500 focus:border-emerald-500 border-gray-300 rounded-md" placeholder="Full name">
+          </div>
+          <div>
+            <label for="email" class="sr-only">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-emerald-500 focus:border-emerald-500 border-gray-300 rounded-md" placeholder="Email">
+          </div>
+          <div>
+            <label for="phone" class="sr-only">Phone</label>
+            <input type="text" name="phone" id="phone" autocomplete="tel" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-emerald-500 focus:border-emerald-500 border-gray-300 rounded-md" placeholder="Phone">
+          </div>
+          <div>
+            <label for="message" class="sr-only">Message</label>
+            <textarea id="message" name="message" rows="4" class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-emerald-500 focus:border-emerald-500 border border-gray-300 rounded-md" placeholder="Message"></textarea>
+          </div>
+          <div>
+            <button type="submit" class="inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 w-1/2">
+              Let's Get Started
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+	</div>
+</div>
